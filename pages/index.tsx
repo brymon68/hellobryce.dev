@@ -1,4 +1,5 @@
-import { Nav } from './nav';
+import React from 'react';
+import Nav from './nav';
 export default function Document() {
   return (
     <div>

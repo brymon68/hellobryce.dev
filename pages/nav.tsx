@@ -1,4 +1,5 @@
-export function Nav() {
+import React from 'react';
+export default function Nav() {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">

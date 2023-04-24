@@ -1,4 +1,5 @@
-export function BlogCards() {
+import React from 'react';
+export default function BlogCards() {
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
