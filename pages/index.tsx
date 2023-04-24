@@ -1,5 +1,5 @@
 import { Nav } from './nav';
-export default function Home() {
+export default function Document() {
   return (
     <div>
       <Nav />
