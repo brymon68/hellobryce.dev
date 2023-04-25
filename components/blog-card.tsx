@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import Image from 'next/image';
 
 interface BlogCardProps {
   imageUrl: string;
@@ -13,7 +13,7 @@ export default function BlogCard(props: BlogCardProps) {
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={props.imageUrl} alt={props.imageAltText} />
+        <Image src={props.imageUrl} alt={props.imageAltText} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{props.title}</h2>

@@ -14,7 +14,7 @@ export default function Nav({ allPosts }: Props) {
         </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 ">
           {allPosts?.length > 0 ? (
             <li tabIndex={0}>
               <a>
@@ -29,7 +29,7 @@ export default function Nav({ allPosts }: Props) {
                   <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                 </svg>
               </a>
-              <ul className="p-2 bg-base-100">
+              <ul className="p-2 bg-base-100  mr-48">
                 {allPosts.map((post, idx) => (
                   <li key={idx}>
                     <Link key={idx} href={`/blog/${post.slug}`}>
