@@ -30,9 +30,11 @@ export default function Nav({ allPosts }: Props) {
                 </svg>
               </a>
               <ul className="p-2 bg-base-100">
-                {allPosts.map((post) => (
-                  <li>
-                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                {allPosts.map((post, idx) => (
+                  <li key={idx}>
+                    <Link key={idx} href={`/blog/${post.slug}`}>
+                      {post.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
