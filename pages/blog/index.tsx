@@ -20,7 +20,7 @@ export default function Index({ allPosts }: Props) {
             <BlogCard
               key={idx}
               href={`/blog/${post.slug}`}
-              imageUrl="https://preview.redd.it/the-virgin-php-developer-versus-the-chad-php-dev-v0-fefepfx5bca91.png?auto=webp&s=99c246e84f1bb930197e400dd4564e657771d67d"
+              imageUrl=""
               description={post.excerpt}
               title={post.title}
               imageAltText="lol"

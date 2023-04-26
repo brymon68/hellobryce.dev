@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import PostType from '@/interfaces/post';
 import { getAllPosts } from '@/lib/api';

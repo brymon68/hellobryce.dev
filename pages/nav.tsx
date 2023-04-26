@@ -8,7 +8,7 @@ type Props = {
 export default function Nav({ allPosts }: Props) {
   return (
     <div className="navbar bg-base-100">
-      <div className="flex-1">
+      <div className="flex-1 z-0">
         <Link href="/" className="btn btn-ghost normal-case text-xl">
           🛠 hellobryce.dev
         </Link>
