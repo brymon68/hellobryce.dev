@@ -21,6 +21,9 @@ export default function Layout({ children }: Props) {
         })
       );
     }
+    return () => {
+      if (vantaEffect) NET.destroy();
+    };
   }, [vantaEffect]);
   return (
     <>
