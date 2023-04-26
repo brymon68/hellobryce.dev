@@ -7,6 +7,7 @@ type Props = {
   preview?: boolean;
   children: React.ReactNode;
 };
+
 export default function Layout({ children }: Props) {
   const [vantaEffect, setVantaEffect] = useState(null);
   const myRef = useRef(null);
@@ -20,9 +21,6 @@ export default function Layout({ children }: Props) {
         })
       );
     }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
   }, [vantaEffect]);
   return (
     <>
@@ -30,7 +28,10 @@ export default function Layout({ children }: Props) {
         <main>{children}</main>
       </div>
       <Head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+          async
+        ></script>
         <Meta />
       </Head>
     </>
