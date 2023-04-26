@@ -27,7 +27,7 @@ export default function Layout({ children }: Props) {
   }, [vantaEffect]);
   return (
     <>
-      <div className="min-h-screen" ref={myRef}>
+      <div className="max-h-96" ref={myRef}>
         <main>{children}</main>
       </div>
       <Head>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import CoverImage from './cover-image';
 
 interface BlogCardProps {
   imageUrl: string;
@@ -13,7 +14,7 @@ export default function BlogCard(props: BlogCardProps) {
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
-        <Image src={props.imageUrl} alt={props.imageAltText} />
+        <CoverImage title="virgin" src={props.imageUrl} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{props.title}</h2>

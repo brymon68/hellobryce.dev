@@ -9,41 +9,44 @@ import PostTitle from '../../components/post-title';
 import Head from 'next/head';
 import markdownToHtml from '../../lib/markdownToHtml';
 import type PostType from '../../interfaces/post';
+import Nav from '../nav';
 
 type Props = {
   post: PostType;
   allPosts: PostType[];
 };
 
-export default function BlogPost({ post }: Props) {
+export default function BlogPost({ post, allPosts }: Props) {
   const router = useRouter();
   const title = `${post.title} | Next.js Blog Example with `;
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <Container>
-      <Header />
-      {router.isFallback ? (
-        <PostTitle>Loading…</PostTitle>
-      ) : (
-        <>
-          <article className="mb-32">
-            <Head>
-              <title>{title}</title>
-              <meta property="og:image" content={post.ogImage.url} />
-            </Head>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />
-            <PostBody content={post.content} />
-          </article>
-        </>
-      )}
-    </Container>
+    <>
+      <Nav allPosts={allPosts} />
+      <Container>
+        <Header />
+        {router.isFallback ? (
+          <PostTitle>Loading…</PostTitle>
+        ) : (
+          <>
+            <article className="mb-32">
+              <Head>
+                <title>{title}</title>
+                <meta property="og:image" content={post.ogImage.url} />
+              </Head>
+              <PostHeader
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+              />
+              <PostBody content={post.content} />
+            </article>
+          </>
+        )}
+      </Container>
+    </>
   );
 }
 
@@ -58,10 +61,17 @@ export async function getStaticProps({ params }: Params) {
     'title',
     'date',
     'slug',
-    'author',
     'content',
     'ogImage',
     'coverImage'
+  ]);
+
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'coverImage',
+    'excerpt'
   ]);
   const content = await markdownToHtml(post.content || '');
 
@@ -70,7 +80,8 @@ export async function getStaticProps({ params }: Params) {
       post: {
         ...post,
         content
-      }
+      },
+      allPosts
     }
   };
 }

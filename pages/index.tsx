@@ -15,7 +15,7 @@ export default function Index({ allPosts }: Props) {
             <p className="py-6">
               I decided to start a blog, where half-baked ideas come to die.
             </p>
-            <Link className="btn btn-primary" href="/blog/">
+            <Link className="btn btn-secondary" href="/blog/">
               View my latest blogs
             </Link>
           </div>
@@ -33,7 +33,6 @@ export const getStaticProps = async () => {
     'title',
     'date',
     'slug',
-    'author',
     'coverImage',
     'excerpt'
   ]);

@@ -20,7 +20,7 @@ export default function Index({ allPosts }: Props) {
             <BlogCard
               key={idx}
               href={`/blog/${post.slug}`}
-              imageUrl=""
+              imageUrl={post.coverImage}
               description={post.excerpt}
               title={post.title}
               imageAltText="lol"
@@ -40,7 +40,6 @@ export const getStaticProps = async () => {
     'title',
     'date',
     'slug',
-    'author',
     'coverImage',
     'excerpt'
   ]);
