@@ -40,6 +40,7 @@ export default function BlogPost({ post, allPosts }: Props) {
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
+                showPostHeader={false}
               />
               <PostBody content={post.content} />
             </article>

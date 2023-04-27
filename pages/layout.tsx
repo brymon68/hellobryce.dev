@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import Meta from '@/components/meta';
 import Head from 'next/head';
 import NET from 'vanta/dist/vanta.net.min';
+import Script from 'next/script';
+// import Footer from '@/components/footer';
 
 type Props = {
   preview?: boolean;
@@ -27,16 +29,17 @@ export default function Layout({ children }: Props) {
   }, [vantaEffect]);
   return (
     <>
+      <Head>
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+          async
+        ></Script>
+        <Meta />
+      </Head>
       <div className="max-h-96" ref={myRef}>
         <main>{children}</main>
       </div>
-      <Head>
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-          async
-        ></script>
-        <Meta />
-      </Head>
+      {/* <Footer /> */}
     </>
   );
 }

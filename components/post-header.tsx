@@ -6,9 +6,10 @@ type Props = {
   title: string;
   coverImage: string;
   date: string;
+  showPostHeader: boolean;
 };
 
-const PostHeader = ({ title, coverImage, date }: Props) => {
+const PostHeader = ({ title, coverImage, date, showPostHeader }: Props) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -18,10 +19,11 @@ const PostHeader = ({ title, coverImage, date }: Props) => {
           <DateFormatter dateString={date} />
         </div>
       </div>
-      <div className="hidden md:block md:mb-12"></div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
-      </div>
+      {showPostHeader ? (
+        <div className="mb-8 md:mb-16 sm:mx-0">
+          <CoverImage title={title} src={coverImage} />
+        </div>
+      ) : null}
     </>
   );
 };

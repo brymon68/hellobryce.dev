@@ -2,11 +2,22 @@
   @apply text-lg leading-relaxed;
 }
 
+.markdown a { 
+  @apply text-sky-400
+}
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
   @apply my-6;
+}
+
+.markdown ul{
+  @apply list-disc ml-6;
+}
+
+.markdown ol{
+  @apply list-decimal ml-6;
 }
 
 .markdown h2 {

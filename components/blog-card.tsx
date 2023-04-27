@@ -2,7 +2,7 @@ import Link from 'next/link';
 import CoverImage from './cover-image';
 
 interface BlogCardProps {
-  imageUrl: string;
+  imageUrl?: string;
   imageAltText: string;
   title: string;
   href: string;
