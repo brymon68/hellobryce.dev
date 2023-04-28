@@ -13,10 +13,9 @@ import Nav from '../nav';
 
 type Props = {
   post: PostType;
-  allPosts: PostType[];
 };
 
-export default function BlogPost({ post, allPosts }: Props) {
+export default function BlogPost({ post }: Props) {
   const router = useRouter();
   const title = `${post.title} | Next.js Blog Example with `;
   if (!router.isFallback && !post?.slug) {
@@ -24,7 +23,7 @@ export default function BlogPost({ post, allPosts }: Props) {
   }
   return (
     <>
-      <Nav allPosts={allPosts} />
+      <Nav />
       <Container>
         <Header />
         {router.isFallback ? (
@@ -67,13 +66,6 @@ export async function getStaticProps({ params }: Params) {
     'coverImage'
   ]);
 
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'coverImage',
-    'excerpt'
-  ]);
   const content = await markdownToHtml(post.content || '');
 
   return {
@@ -81,8 +73,7 @@ export async function getStaticProps({ params }: Params) {
       post: {
         ...post,
         content
-      },
-      allPosts
+      }
     }
   };
 }
