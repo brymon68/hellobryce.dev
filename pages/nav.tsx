@@ -1,12 +1,7 @@
 import React from 'react';
-import Post from '@/interfaces/post';
 import Link from 'next/link';
 
-type Props = {
-  allPosts: Post[];
-};
-
-export default function Nav({ allPosts }: Props) {
+export default function Nav() {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1 z-0">
