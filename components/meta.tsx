@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 
 const Meta = () => {
   return (
@@ -31,6 +32,10 @@ const Meta = () => {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+        async
+      />
       <meta
         name="description"
         content={`A statically generated blog example using Next.js and .`}
