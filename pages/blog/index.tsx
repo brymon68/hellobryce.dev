@@ -9,7 +9,7 @@ import Nav from '../nav';
 export default function Index({ allPosts }: Props) {
   return (
     <>
-      <Nav allPosts={allPosts} />
+      <Nav />
       <Head>
         <title>{`Blogs`}</title>
       </Head>
